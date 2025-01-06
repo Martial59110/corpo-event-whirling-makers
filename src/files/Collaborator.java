@@ -132,15 +132,7 @@ public class Collaborator {
         System.out.println("Événement ajouté : " + title);
     }
 
-    public void modifyOwnEvent(String title, ListEvents list, String newTitle, String newDescription, String newPlace, LocalDateTime newStartDate, LocalDateTime newEndDate) {
-        Event eventToModify = null;
-
-        for (Event event : list.getEvents()) {
-            if (event.getTitle().equals(title)) {
-                eventToModify = event;
-                break;  
-            }
-        }
+    public void modifyOwnEvent(Event eventToModify, ListEvents list, String newTitle, String newDescription, String newPlace, LocalDateTime newStartDate, LocalDateTime newEndDate) {
         if (eventToModify != null) {
             if (eventToModify.getOwner() == this) {
                 eventToModify.setTitle(newTitle);
@@ -158,16 +150,7 @@ public class Collaborator {
     }
 
 
-    public void deleteOwnEvent(String title, ListEvents list) {
-        Event eventToDelete = null;
-
-        for (Event event : list.getEvents()) {
-            if (event.getTitle().equals(title)) {
-                eventToDelete = event;
-                break;  
-            }
-        }
-
+    public void deleteOwnEvent(Event eventToDelete, ListEvents list) {
         if (eventToDelete != null) {
             if (eventToDelete.getOwner() == this) {
                 list.removeEvent(eventToDelete);

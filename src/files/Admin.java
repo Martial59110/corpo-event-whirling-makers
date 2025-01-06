@@ -15,15 +15,7 @@ public class Admin extends Collaborator {
     }
 
 
-    public void deleteUser(String email, ListCollaborators list) {
-        Collaborator collaboratorToDelete = null;
-        for (Collaborator collaborator : list.getCollaborators()) {
-            if (collaborator.getEmail().equals(email)) {
-                collaboratorToDelete = collaborator;
-                break;
-            }
-        }
-        
+    public void deleteUser(Collaborator collaboratorToDelete, ListCollaborators list) {        
         if (collaboratorToDelete != null) {
             list.removeCollaborator(collaboratorToDelete);
             System.out.println("Utilisateur supprimé : " + collaboratorToDelete.getFirstName() + " " + collaboratorToDelete.getLastName());
@@ -34,9 +26,6 @@ public class Admin extends Collaborator {
 
 
    
- 
-
-
     public void deleteAnyComment(Comment comment, Event event, Collaborator owner) {
         if (comment.getOwner() == owner) {
             event.removeComment(comment);
