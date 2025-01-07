@@ -15,7 +15,7 @@ Il est organisé en deux parties principales : la **documentation** et le **code
     - [Diagramme de classe](./doc/diagramme-classe.jpg)
     - [Diagramme de séquence sur l'ajout d'un événement](./doc/diagramme-sequence-creation.jpg)
     - [Diagramme de séquence sur la modification d'un événement](./doc/diagramme-sequence-modification.jpg)
-    - [Partie code source](./src/files/)
+- [Partie code source](./src/files/)
     - [La classe *Admin*](./src/files/Admin.java)
     - [La classe *Collaborator*](./src/files/Collaborator.java)
     - [La classe *Comment*](./src/files/Comment.java)
