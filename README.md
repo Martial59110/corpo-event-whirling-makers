@@ -8,7 +8,7 @@ Il est organisé en deux parties principales : la **documentation** et le **code
     - Un diagramme de séquence se concentrant sur deux actions spécifiques: l'ajout et la modification d'un évènement.
 - La **partie source**, développée en Java, contient les classes et méthodes définies lors de la phase de conception.
 
-Sommaire:
+## Sommaire:
 - [Partie documentation](./doc/)
     - [Règles de gestions](./doc/regles-gestion.md)
     - [Diagramme de cas d'utilisation](./doc/cas-utilisation.jpg)
@@ -22,3 +22,16 @@ Sommaire:
     - [La classe *Event*](./src/files/Event.java)
     - [La classe *ListCollaborators*](./src/files/ListCollaborators.java)
     - [La classe *ListEvents*](./src/files/ListEvents.java)
+
+## Fonctionnement du code
+
+Notre dossier source contient les classes et méthodes qui ont été développées conformément au diagramme de classes, à l'exception de la classe App, qui contient la méthode main. Cette méthode main sert de point d'entrée pour l'application et permet d'appeler toutes les autres classes et méthodes du projet. Pour faciliter la démonstration de certaines fonctionnalités, nous avons ajouté une méthode start dans la classe App.
+
+Dans cette méthode start, nous avons intégré une démonstration qui réalise les actions suivantes :
+- Ajout d'un administrateur (Admin).
+- Ajout de deux utilisateurs, qui sont ensuite affichés.
+- Ajout d'un événement, qui est ensuite affiché.
+
+Comment lancer la démo dans Eclipse :
+- Ouvrez le dossier src dans votre IDE Eclipse.
+- Exécutez le programme en cliquant sur Run. Cela lancera la méthode main et exécutera la démo.
