@@ -2,8 +2,9 @@ package files;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
-public class ListCollaborators {
+public class ListCollaborators implements Iterable<Collaborator>{
 	private List<Collaborator> collaborators;
 
     public ListCollaborators() {
@@ -18,6 +19,11 @@ public class ListCollaborators {
         this.collaborators.remove(collaborator);
     }
 
+    
+    public Iterator<Collaborator> iterator() {
+        return collaborators.iterator();
+    }
+    
     public List<Collaborator> getCollaborators() {
         return this.collaborators;
     }

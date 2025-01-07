@@ -9,7 +9,8 @@ public class Admin extends Collaborator {
     }
 
   
-    public void addUser(Collaborator collaborator, ListCollaborators list) {
+    public void addUser(String firstName, String lastName, String email, String password, ListCollaborators list) {
+        Collaborator collaborator = new Collaborator(firstName, lastName, email, password, false);
         list.addCollaborator(collaborator);
         System.out.println("Utilisateur ajouté : " + collaborator.getFirstName() + " " + collaborator.getLastName());
     }

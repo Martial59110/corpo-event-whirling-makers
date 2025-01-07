@@ -1,9 +1,10 @@
 package files;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class ListEvents {
+public class ListEvents implements Iterable<Event> {
 
     private List<Event> events;
 
@@ -17,6 +18,10 @@ public class ListEvents {
 
     public void removeEvent(Event event) {
         this.events.remove(event);
+    }
+    
+    public Iterator<Event> iterator() {
+        return events.iterator();
     }
 
     public List<Event> getEvents() {

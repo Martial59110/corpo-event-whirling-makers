@@ -106,6 +106,7 @@ public class Collaborator {
     public void addComment(String content, LocalDateTime publication, Event event) {
         Comment comment = new Comment(content, publication, this, event);
         event.addComment(comment);  
+        System.out.println("Commentaire suivant ajouté : " + content);
     }
 
     public void modifyOwnComment(Comment comment, String newContent) {
