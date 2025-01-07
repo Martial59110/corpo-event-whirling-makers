@@ -9,21 +9,14 @@ public class Admin extends Collaborator {
     }
 
   
-    public void addUser(Collaborator collaborator, ListCollaborators list) {
+    public void addUser(String firstName, String lastName, String email, String password, ListCollaborators list) {
+        Collaborator collaborator = new Collaborator(firstName, lastName, email, password, false);
         list.addCollaborator(collaborator);
         System.out.println("Utilisateur ajouté : " + collaborator.getFirstName() + " " + collaborator.getLastName());
     }
 
 
-    public void deleteUser(String email, ListCollaborators list) {
-        Collaborator collaboratorToDelete = null;
-        for (Collaborator collaborator : list.getCollaborators()) {
-            if (collaborator.getEmail().equals(email)) {
-                collaboratorToDelete = collaborator;
-                break;
-            }
-        }
-        
+    public void deleteUser(Collaborator collaboratorToDelete, ListCollaborators list) {        
         if (collaboratorToDelete != null) {
             list.removeCollaborator(collaboratorToDelete);
             System.out.println("Utilisateur supprimé : " + collaboratorToDelete.getFirstName() + " " + collaboratorToDelete.getLastName());
@@ -34,9 +27,6 @@ public class Admin extends Collaborator {
 
 
    
- 
-
-
     public void deleteAnyComment(Comment comment, Event event, Collaborator owner) {
         if (comment.getOwner() == owner) {
             event.removeComment(comment);
@@ -47,14 +37,7 @@ public class Admin extends Collaborator {
     }
 
  
-    public void modifyAnyEvent(String title, ListEvents list, String newTitle, String newDescription, String newPlace, LocalDateTime newStartDate, LocalDateTime newEndDate, Collaborator owner) {
-        Event eventToModify = null;
-        for (Event event : list.getEvents()) {
-            if (event.getTitle().equals(title)) {
-                eventToModify = event;
-                break; 
-            }
-        }
+    public void modifyAnyEvent(Event eventToModify, ListEvents list, String newTitle, String newDescription, String newPlace, LocalDateTime newStartDate, LocalDateTime newEndDate, Collaborator owner) {
         if (eventToModify != null) {
             eventToModify.setTitle(newTitle);
             eventToModify.setDescription(newDescription);
@@ -69,15 +52,7 @@ public class Admin extends Collaborator {
 
 
   
-    public void deleteAnyEvent(String title, ListEvents list, Collaborator owner) {
-     
-        Event eventToDelete = null;
-        for (Event event : list.getEvents()) {
-            if (event.getTitle().equals(title)) {
-                eventToDelete = event;
-                break;  
-            }
-        }
+    public void deleteAnyEvent(Event eventToDelete, ListEvents list, Collaborator owner) {
         if (eventToDelete != null) {
             list.removeEvent(eventToDelete); 
             System.out.println("Événement supprimé par " + owner.getFirstName() + " : " + eventToDelete.getTitle());
